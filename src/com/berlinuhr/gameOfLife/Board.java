@@ -1,4 +1,4 @@
-package gameOfLifeAwk;
+package com.berlinuhr.gameOfLife;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

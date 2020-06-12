@@ -1,4 +1,4 @@
-package gameOfLifeAwk;
+package com.berlinuhr.gameOfLife;
 
 public class GameOfLifeWithFrame {
 	private final static int frameSize = 100;

@@ -1,4 +1,4 @@
-package gameOfLifeAwk;
+package com.berlinuhr.gameOfLife;
 
 public class Simulation extends Thread {
 	private Controller controller;

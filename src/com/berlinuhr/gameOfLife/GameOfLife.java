@@ -1,4 +1,4 @@
-package gameOfLifeAwk;
+package com.berlinuhr.gameOfLife;
 
 public class GameOfLife {
 	private final int size;

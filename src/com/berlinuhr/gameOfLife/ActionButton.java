@@ -1,4 +1,4 @@
-package gameOfLifeAwk;
+package com.berlinuhr.gameOfLife;
 
 import java.awt.Button;
 import java.awt.event.ActionListener;
