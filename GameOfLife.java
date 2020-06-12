@@ -38,7 +38,7 @@ public class GameOfLife {
 	}
 
 	public void toggleCell(int i, int j) {
-		world[i][j] = !world[i][j];
+		world[i][j] = !isCellAlive(i, j);
 	}
 
 	public boolean isCellAlive(int i, int j) {
