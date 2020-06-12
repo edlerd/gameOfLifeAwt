@@ -2,7 +2,7 @@ package com.berlinuhr.gameOfLife;
 
 public class GameOfLifeWithFrame {
 	private final static int frameSize = 100;
-	private GameOfLife game;
+	private final GameOfLife game;
 
 	GameOfLifeWithFrame(int size) {
 		game = new GameOfLife(size + 2 * frameSize);

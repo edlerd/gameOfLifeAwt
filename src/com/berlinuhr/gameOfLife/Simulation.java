@@ -1,8 +1,10 @@
 package com.berlinuhr.gameOfLife;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Simulation extends Thread {
-	private Controller controller;
-	private volatile int delay = 400;
+	private final Controller controller;
+	private final AtomicInteger delay = new AtomicInteger(400);
 	private volatile boolean isPaused = false;
 
 	Simulation(Controller controller) {
@@ -16,7 +18,7 @@ public class Simulation extends Thread {
 				controller.step();
 			}
 			try {
-				Thread.sleep(delay);
+				Thread.sleep(delay.intValue());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -40,12 +42,12 @@ public class Simulation extends Thread {
 	}
 
 	public void faster() {
-		if (delay > 0) {
-			delay -= 100;
+		if (delay.intValue() > 0) {
+			delay.getAndAdd(-100);
 		}
 	}
 
 	public void slower() {
-		delay += 100;
+		delay.getAndAdd(100);
 	}
 }
