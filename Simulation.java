@@ -40,7 +40,7 @@ public class Simulation extends Thread {
 	}
 
 	public void faster() {
-		if (delay > 100) {
+		if (delay > 0) {
 			delay -= 100;
 		}
 	}

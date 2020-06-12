@@ -5,11 +5,11 @@ public class GameOfLifeWithFrame {
 	private GameOfLife game;
 
 	GameOfLifeWithFrame(int size) {
-		game = new GameOfLife(size + frameSize);
+		game = new GameOfLife(size + 2 * frameSize);
 	}
 
 	public int getSize() {
-		return game.getSize() - frameSize;
+		return game.getSize() - 2 * frameSize;
 	}
 
 	public void toggleCell(int pi, int pj) {
@@ -25,7 +25,7 @@ public class GameOfLifeWithFrame {
 	}
 
 	private int normalize(int i) {
-		return i + frameSize / 2;
+		return i + frameSize;
 	}
 
 	public void step() {
