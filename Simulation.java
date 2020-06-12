@@ -2,7 +2,7 @@ package gameOfLifeAwk;
 
 public class Simulation extends Thread {
 	private Controller controller;
-	private volatile int speed = 400;
+	private volatile int delay = 400;
 	private volatile boolean isPaused = false;
 
 	Simulation(Controller controller) {
@@ -16,7 +16,7 @@ public class Simulation extends Thread {
 				controller.step();
 			}
 			try {
-				Thread.sleep(speed);
+				Thread.sleep(delay);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -40,12 +40,12 @@ public class Simulation extends Thread {
 	}
 
 	public void faster() {
-		if (speed > 100) {
-			speed -= 100;
+		if (delay > 100) {
+			delay -= 100;
 		}
 	}
 
 	public void slower() {
-		speed += 100;
+		delay += 100;
 	}
 }
