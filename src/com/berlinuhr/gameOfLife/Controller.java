@@ -14,7 +14,7 @@ public class Controller {
 
 	public Button createCell(int i, int j) {
 		buttons[i][j] = new Button();
-		buttons[i][j].setBackground(Color.BLACK);
+		buttons[i][j].setBackground(Color.BLUE);
 		buttons[i][j].addActionListener(e -> handleButtonClick(i, j));
 		return buttons[i][j];
 	}
@@ -32,7 +32,7 @@ public class Controller {
 	public void repaint() {
 		for (int i = 0; i < game.getSize(); i++) {
 			for (int j = 0; j < game.getSize(); j++) {
-				Color c = game.isCellAlive(i, j) ? Color.WHITE : Color.BLACK;
+				Color c = game.isCellAlive(i, j) ? Color.YELLOW : Color.BLUE;
 				buttons[i][j].setBackground(c);
 			}
 		}
@@ -41,5 +41,17 @@ public class Controller {
 	public void reset() {
 		game = new GameOfLifeWithFrame(game.getSize());
 		this.repaint();
+	}
+
+	public void randomize() {
+		reset();
+		for (int i = 0; i < game.getSize(); i++) {
+			for (int j = 0; j < game.getSize(); j++) {
+				if (Math.random() > 0.5) {
+					game.toggleCell(i, j);
+				}
+			}
+		}
+		repaint();
 	}
 }

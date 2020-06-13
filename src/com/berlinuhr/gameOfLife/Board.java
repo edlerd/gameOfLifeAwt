@@ -35,6 +35,7 @@ public class Board extends Frame {
 		actions.add(new ActionButton("faster", e -> simulation.faster()));
 		actions.add(new ActionButton("slower", e -> simulation.slower()));
 		actions.add(new ActionButton("reset", e -> simulation.reset()));
+		actions.add(new ActionButton("randomize", e -> controller.randomize()));
 		add(actions, BorderLayout.SOUTH);
 
 		addWindowListener(new WindowAdapter() {
